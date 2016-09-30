@@ -17,23 +17,75 @@
 	transform: translate(-50%, -50%);
 }
 .name {
-	color: #CCA969;
 	font-size: 6em;
 }
 .email {
 	position: absolute;
 	bottom: 10px;
 	right: 10px;
-	color: #CCA969;
 	font-size: 1em;
 	text-decoration: none;
+}
+.color-text {
+
 }
 </style>
 </head>
 
-<body  class="main" style="background-color:#291B2C">
-  <div class="centered name" title="Coming soon">Gleezr</div>
-  <a class="email" href="mailto:info@gleezr.com" target="_top">info@gleezr.com</a>
+<body  class="main">
+  <div class="centered name color-text" title="Coming soon">Gleezr</div>
+  <a class="email color-text" href="mailto:info@gleezr.com" target="_top">info@gleezr.com</a>
 </body>
+
+<script>
+
+var numOfPalletes = 8;
+
+var pallete1 = {
+	background: "#291B2C",
+	font: "#CCA969"
+};
+var pallete2 = {
+	background: "#391B2C",
+	font: "#CCA969"
+};
+var pallete3 = {
+	background: "#1A2C56",
+	font: "#D1A683"
+};
+var pallete4 = {
+	background: "#3B1313",
+	font: "#A66D3F"
+};
+var pallete5 = {
+	background: "#2A2927",
+	font: "#FCCF0D"
+};
+var pallete6 = {
+	background: "#721C47",
+	font: "#D1A377"
+};
+var pallete7 = {
+	background: "#989479",
+	font: "#2E3268"
+};
+var pallete8 = {
+	background: "#B69D70",
+	font: "#7F1518"
+};
+
+var randPalleteNum = Math.floor((Math.random() * numOfPalletes) + 1);
+
+colorPage(window["pallete" + randPalleteNum]);
+
+function colorPage(pallete) {
+	document.body.style.backgroundColor = pallete.background;
+	var texts = document.getElementsByClassName('color-text');
+	for(i=0; i < texts.length; i++) {
+		texts[i].style.color = pallete.font;
+	}
+}
+
+</script>
 
 </html>
